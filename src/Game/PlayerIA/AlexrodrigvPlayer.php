@@ -17,6 +17,23 @@ class AlexrodrigvPlayer extends Player
 
     public function getChoice()
     {
+        if ($this->result->getNbRound() == 0)
+        {
+          $choice = rand(0, 2);
+
+          if ($choice == 0)
+          {
+            return parent::rockChoice();
+          }
+          else if ($choice == 1)
+          {
+            return parent::paperChoice();
+          }
+          else {
+            return parent::scissorsChoice();
+          }
+        }
+
         $lastChoice = $this->result->getLastChoiceFor($this->mySide);
 
         if ($lastChoice != 0)
@@ -33,8 +50,6 @@ class AlexrodrigvPlayer extends Player
         }
 
         return parent::paperChoice();
-
-
 
         // -------------------------------------    -----------------------------------------------------
         // How to get my Last Choice           ?    $this->result->getLastChoiceFor($this->mySide) -- if 0 (first round)
