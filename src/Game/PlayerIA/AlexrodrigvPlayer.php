@@ -36,11 +36,7 @@ class AlexrodrigvPlayer extends Player
 
         $lastChoice = $this->result->getLastChoiceFor($this->mySide);
 
-        if ($lastChoice != 0)
-        {
-          return parent::scissorsChoice();
-        }
-        else if ($lastChoice == "scissors")
+        if ($lastChoice == "scissors")
         {
           return parent::paperChoice();
         }
