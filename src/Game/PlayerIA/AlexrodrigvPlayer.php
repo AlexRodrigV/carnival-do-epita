@@ -27,7 +27,7 @@ class AlexrodrigvPlayer extends Player
         {
           return parent::paperChoice();
         }
-        else
+        else if ($lastChoice == "paper")
         {
           return parent::rockChoice();
         }
