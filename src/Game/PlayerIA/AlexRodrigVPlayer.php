@@ -9,7 +9,7 @@ use Hackathon\Game\Result;
  * @author Robin
  *
  */
-class AlexRodrigVPlayer extends Player
+class AlexrodrigvPlayer extends Player
 {
     protected $mySide;
     protected $opponentSide;
