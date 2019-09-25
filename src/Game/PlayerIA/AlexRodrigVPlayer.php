@@ -17,6 +17,25 @@ class AlexrodrigvPlayer extends Player
 
     public function getChoice()
     {
+        $lastChoice = $this->result->getLastChoiceFor($this->mySide);
+
+        if ($lastChoice != 0)
+        {
+          return parent::scissorsChoice();
+        }
+        else if ($lastChoice == "scissors")
+        {
+          return parent::paperChoice();
+        }
+        else
+        {
+          return parent::rockChoice();
+        }
+
+        return parent::paperChoice();
+
+
+
         // -------------------------------------    -----------------------------------------------------
         // How to get my Last Choice           ?    $this->result->getLastChoiceFor($this->mySide) -- if 0 (first round)
         // How to get the opponent Last Choice ?    $this->result->getLastChoiceFor($this->opponentSide) -- if 0 (first round)
@@ -27,7 +46,7 @@ class AlexrodrigvPlayer extends Player
         // How to get all the Choices          ?    $this->result->getChoicesFor($this->mySide)
         // How to get the opponent Last Choice ?    $this->result->getChoicesFor($this->opponentSide)
         // -------------------------------------    -----------------------------------------------------
-       // How to get my Last Score            ?    $this->result->getLastScoreFor($this->mySide)
+        // How to get my Last Score            ?    $this->result->getLastScoreFor($this->mySide)
         // How to get the opponent Last Score  ?    $this->result->getLastScoreFor($this->opponentSide)
         // -------------------------------------    -----------------------------------------------------
         // How to get the stats                ?    $this->result->getStats()
@@ -40,7 +59,7 @@ class AlexrodrigvPlayer extends Player
         // -------------------------------------    -----------------------------------------------------
         // How can i display the result of each round ? $this->prettyDisplay()
         // -------------------------------------    -----------------------------------------------------
-        
-        return parent::paperChoice();            
+
+
   }
 };
