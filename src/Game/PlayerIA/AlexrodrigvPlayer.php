@@ -17,8 +17,6 @@ class AlexrodrigvPlayer extends Player
 
     public function getChoice()
     {
-return parent::paperChoice();
-
         if ($this->result->getNbRound() == 0)
         {
           $choice = rand(0, 2);
