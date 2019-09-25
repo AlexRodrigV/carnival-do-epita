@@ -34,7 +34,7 @@ class AlexrodrigvPlayer extends Player
           }
         }
 
-        $lastChoice = $this->result->getLastChoiceFor($this->mySide);
+        /*$lastChoice = $this->result->getLastChoiceFor($this->mySide);
 
         if ($lastChoice == "scissors")
         {
@@ -43,6 +43,20 @@ class AlexrodrigvPlayer extends Player
         else if ($lastChoice == "paper")
         {
           return parent::rockChoice();
+        }
+
+        return parent::paperChoice();*/
+
+
+        $lastChoice = $this->result->getLastChoiceFor($this->opponentSide);
+
+        if ($lastChoice == "scissors")
+        {
+          return parent::rockChoice();
+        }
+        else if ($lastChoice == "paper")
+        {
+          return parent::scissorsChoice();
         }
 
         return parent::paperChoice();
